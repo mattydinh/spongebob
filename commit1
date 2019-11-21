@@ -1,0 +1,15 @@
+import itertools
+
+def spongebob(old_string):
+    funcs = iter(itertools.cycle([str.lower, str.upper]))
+
+    new_string = []
+    for l in old_string:
+        if l.isalpha():
+            f = next(funcs)
+            l = f(l)
+        new_string.append(l)
+
+    print(''.join(new_string))
+
+spongebob("im kai im gonna win shipit")
